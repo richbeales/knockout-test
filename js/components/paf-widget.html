@@ -1,0 +1,32 @@
+<div class="address">
+
+    <div data-bind="visible: chosenAddress, with: chosenAddress">
+        <label for="organisation" title="Organisation">Organisation</label>
+        <input type="text" id="organisation" name="organisation" data-bind="value: Organisation"/>
+        <label for="line1" title="Address 1">Address 1</label>
+        <input type="text" id="line1" name="line1" data-bind="value: AddressLine1"/>
+        <label for="line2" title="Address 2">Address 2</label>
+        <input type="text" id="line2" name="line2" data-bind="value: AddressLine2"/>
+        <label for="city" title="City">City</label>
+        <input type="text" id="city" name="city" data-bind="value: City"/>
+    </div>
+    <label for="postcode" title="Postcode">Postcode</label>
+    <input type="text" id="postcode" name="postcode" data-bind="value: postcode" />
+</div>
+
+<select data-bind='options: addresses,
+                   optionsCaption: "Choose ...",
+                   optionsText: "AddressLine1",
+                   value: chosenAddress,
+                   visible: addresses().length > 0'></select>
+
+<button class="btn" data-bind='click: searchAddress'>Search Address</button>
+
+<button class="btn btn-danger" data-bind='enable: chosenAddress,
+                   click: resetAddress'>Clear
+</button>
+
+
+<p data-bind='with: chosenAddress'>
+    You have chosen <b data-bind='text: AddressLine1'></b>
+</p>

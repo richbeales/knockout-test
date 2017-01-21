@@ -1,0 +1,12 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.address {
+  padding: 10px; }
+  .address label {
+    display: table-cell;
+    width: 200px; }
+  .address input {
+    display: table-cell; }
+
+/*# sourceMappingURL=style.css.map */

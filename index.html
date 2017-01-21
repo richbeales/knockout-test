@@ -1,0 +1,39 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bootstrap with jQuery and KnockoutJS</title>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+
+    <header>
+
+    </header>
+
+    <h1>App</h1>
+
+    Choose an Address
+     <pre data-bind="text: ko.toJSON(addressList, null, 2)"></pre>
+
+    <ul data-bind="foreach: {data: addressList, as: 'addrVm'}" style="list-style: none;">
+        <li class="addressli">
+            <pre data-bind="text: ko.toJSON(addrVm, null, 2)"></pre>
+            <div data-bind="component: {name: 'paf-address', with: addrVm }"></div>
+        </li>
+    </ul>
+    <button class="btn btn-primary" data-bind="click: addAddress">Add an address</button>
+
+    <footer>
+
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js" data-main="js/app"></script>
+    <script src="require-config.js"></script>
+    </body>
+    </html>
